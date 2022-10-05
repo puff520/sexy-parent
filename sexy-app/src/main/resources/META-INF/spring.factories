@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  config.com.ikun.MybatisPlusFillHandler,\
+    config.com.ikun.MybatisPlusConfig
