@@ -1,7 +1,11 @@
 server:
   port: 8002
 
+
+
 spring:
+  main:
+    allow-bean-definition -overriding: true
   freemarker:
     check-template-location: false
   cache:
@@ -18,9 +22,9 @@ spring:
   redis:
     #数据库索引
     database: 0
-    host: 127.0.0.1
+    host: 154.204.34.67
     port: 6379
-    password: 
+    password: Wrhwiydk6Z2
     #连接超时时间
     timeout: 5000
 
