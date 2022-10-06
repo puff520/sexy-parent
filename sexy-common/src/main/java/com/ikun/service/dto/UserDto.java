@@ -1,9 +1,7 @@
-package com.ikun.modules.system.service.dto;
+package com.ikun.service.dto;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import com.ikun.base.CommonDto;
 
 import java.io.Serializable;

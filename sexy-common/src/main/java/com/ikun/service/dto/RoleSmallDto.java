@@ -1,5 +1,5 @@
 
-package com.ikun.modules.system.service.dto;
+package com.ikun.service.dto;
 
 import lombok.Data;
 import java.io.Serializable;

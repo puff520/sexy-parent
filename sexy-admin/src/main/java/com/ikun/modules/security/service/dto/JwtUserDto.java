@@ -4,7 +4,7 @@ package com.ikun.modules.security.service.dto;
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import com.ikun.modules.system.service.dto.UserDto;
+import com.ikun.service.dto.UserDto;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import java.util.List;

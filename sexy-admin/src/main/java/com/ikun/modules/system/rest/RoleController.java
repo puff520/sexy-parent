@@ -6,7 +6,7 @@ import com.ikun.modules.system.domain.Role;
 import com.ikun.modules.system.service.RoleService;
 import com.ikun.modules.system.service.dto.RoleDto;
 import com.ikun.modules.system.service.dto.RoleQueryParam;
-import com.ikun.modules.system.service.dto.RoleSmallDto;
+import com.ikun.service.dto.RoleSmallDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;

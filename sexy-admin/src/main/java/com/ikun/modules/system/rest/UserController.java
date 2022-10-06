@@ -2,10 +2,10 @@
 package com.ikun.modules.system.rest;
 
 import cn.hutool.core.collection.CollectionUtil;
-import com.ikun.modules.system.domain.User;
+import com.ikun.service.domain.User;
 import com.ikun.modules.system.domain.vo.UserPassVo;
-import com.ikun.modules.system.service.dto.RoleSmallDto;
-import com.ikun.modules.system.service.dto.UserDto;
+import com.ikun.service.dto.RoleSmallDto;
+import com.ikun.service.dto.UserDto;
 import com.ikun.modules.system.service.dto.UserQueryParam;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

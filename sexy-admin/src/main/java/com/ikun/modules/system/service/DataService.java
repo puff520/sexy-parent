@@ -1,7 +1,7 @@
 
 package com.ikun.modules.system.service;
 
-import com.ikun.modules.system.service.dto.UserDto;
+import com.ikun.service.dto.UserDto;
 
 import java.util.List;
 

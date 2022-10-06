@@ -1,4 +1,4 @@
-package com.ikun.modules.system.service.dto;
+package com.ikun.service.dto;
 
 import com.ikun.annotation.Query;
 import lombok.Data;

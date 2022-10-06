@@ -1,8 +1,8 @@
 package com.ikun.modules.system.service;
 
 import com.ikun.modules.system.service.dto.RoleQueryParam;
-import com.ikun.modules.system.service.dto.RoleSmallDto;
-import com.ikun.modules.system.service.dto.UserDto;
+import com.ikun.service.dto.RoleSmallDto;
+import com.ikun.service.dto.UserDto;
 import com.ikun.base.CommonService;
 import com.ikun.base.PageInfo;
 import com.ikun.modules.system.domain.Role;

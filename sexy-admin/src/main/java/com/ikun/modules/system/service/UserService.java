@@ -1,10 +1,10 @@
 package com.ikun.modules.system.service;
 
-import com.ikun.modules.system.service.dto.UserDto;
+import com.ikun.service.dto.UserDto;
 import com.ikun.modules.system.service.dto.UserQueryParam;
 import com.ikun.base.CommonService;
 import com.ikun.base.PageInfo;
-import com.ikun.modules.system.domain.User;
+import com.ikun.service.domain.User;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.multipart.MultipartFile;
 

@@ -1,8 +1,9 @@
 
-package com.ikun.modules.system.service.dto;
+package com.ikun.service.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 /**
@@ -11,9 +12,13 @@ import java.io.Serializable;
 */
 @Data
 @NoArgsConstructor
-public class JobSmallDto implements Serializable {
+public class DeptSmallDto implements Serializable {
 
     private Long id;
-
     private String name;
+
+    public DeptSmallDto(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

@@ -1,9 +1,9 @@
-package com.ikun.modules.system.service.mapper;
+package com.ikun.service.mapper;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
 import com.ikun.base.CommonMapper;
-import com.ikun.modules.system.domain.User;
+import com.ikun.service.domain.User;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
