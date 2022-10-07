@@ -21,12 +21,12 @@ import java.io.Serializable;
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = false)
 @TableName("busi_address_book")
-public class AddressBook extends CommonEntity<AddressBook> implements Serializable {
+public class AddressBook implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "ID")
     @TableId(value = "id", type= IdType.AUTO)
-    @NotNull(groups = Update.class)
+//    @NotNull(groups = Update.class)
     private Long id;
 
     @ApiModelProperty(value = "用户ID")

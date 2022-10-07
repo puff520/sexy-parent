@@ -5,6 +5,7 @@ import com.ikun.base.PageInfo;
 import com.ikun.service.domain.User;
 import com.ikun.service.dto.AddressBookDto;
 import com.ikun.service.dto.AddressBookQueryParam;
+import com.ikun.service.dto.AddressBooksDto;
 import com.ikun.service.dto.UserDto;
 import org.springframework.data.domain.Pageable;
 
@@ -45,7 +46,7 @@ public interface AddressBookService extends CommonService<User>{
     /**
      * 插入一条新数据。
      */
-    boolean save(AddressBookDto resources);
+    boolean save(AddressBooksDto<AddressBookDto> list);
 
     UserDto saveUser(UserDto resources);
 }

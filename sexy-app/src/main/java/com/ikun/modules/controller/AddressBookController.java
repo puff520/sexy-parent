@@ -4,6 +4,8 @@ package com.ikun.modules.controller;
 import com.ikun.annotation.Log;
 import com.ikun.service.addressbook.AddressBookService;
 import com.ikun.service.dto.AddressBookDto;
+import com.ikun.service.dto.AddressBookQueryParam;
+import com.ikun.service.dto.AddressBooksDto;
 import com.ikun.service.dto.UserDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -36,10 +38,9 @@ public class AddressBookController {
 //        addressBookService.download(addressBookService.queryAll(criteria), response);
 //    }
 //
-//    @ApiOperation("查询通讯录数据")
-//    @GetMapping
-//    @PreAuthorize("@el.check('user:list')")
-//    public ResponseEntity<Object> query(AddressBookQueryParam criteria, Pageable pageable){
+    @ApiOperation("查询通讯录数据")
+    @GetMapping
+    public ResponseEntity<Object> query(AddressBookQueryParam criteria, Pageable pageable){
 //        if (!ObjectUtils.isEmpty(criteria.getDeptId())) {
 //            criteria.getDeptIds().add(criteria.getDeptId());
 //            criteria.getDeptIds().addAll(deptService.getDeptChildren(criteria.getDeptId(),
@@ -60,12 +61,12 @@ public class AddressBookController {
 //            return new ResponseEntity<>(userService.queryAll(criteria,pageable),HttpStatus.OK);
 //        }
 //        return new ResponseEntity<>(PageUtil.toPage(null,0),HttpStatus.OK);
-//        return new ResponseEntity<>(addressBookService.queryAll(criteria,pageable),HttpStatus.OK);
-//    }
+        return new ResponseEntity<>(addressBookService.queryAll(criteria,pageable),HttpStatus.OK);
+    }
     @Log("新增通讯录数据")
     @ApiOperation("新增通讯录数据")
     @PostMapping
-    public ResponseEntity<Object> create(@Validated @RequestBody AddressBookDto resources){
+    public ResponseEntity<Object> create(@Validated @RequestBody AddressBooksDto<AddressBookDto> resources){
         addressBookService.save(resources);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

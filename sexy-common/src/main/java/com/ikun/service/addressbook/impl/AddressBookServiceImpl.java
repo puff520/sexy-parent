@@ -10,6 +10,7 @@ import com.ikun.service.domain.AddressBook;
 import com.ikun.service.domain.User;
 import com.ikun.service.dto.AddressBookDto;
 import com.ikun.service.dto.AddressBookQueryParam;
+import com.ikun.service.dto.AddressBooksDto;
 import com.ikun.service.dto.UserDto;
 import com.ikun.service.mapper.AddressBookMapper;
 import com.ikun.service.mapper.UserMapper;
@@ -85,15 +86,17 @@ public class AddressBookServiceImpl extends CommonServiceImpl<UserMapper, User> 
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public boolean save(AddressBookDto resources) {
-        LambdaQueryWrapper<AddressBook> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(AddressBook::getUserName, resources.getUserName());
-        wrapper.eq(AddressBook::getPhone, resources.getPhone());
-        AddressBook oldAddressBook = addressBookMapper.selectOne(wrapper);
-        if(null==oldAddressBook) {
-            AddressBook addressBook = new AddressBook();
-            BeanUtils.copyProperties(resources, addressBook);
-            addressBookMapper.insert(addressBook);
+    public boolean save(AddressBooksDto<AddressBookDto> list) {
+        for(AddressBookDto resources:list.getKey()) {
+            LambdaQueryWrapper<AddressBook> wrapper = new LambdaQueryWrapper<>();
+            wrapper.eq(AddressBook::getUserName, resources.getUserName());
+            wrapper.eq(AddressBook::getPhone, resources.getPhone());
+            AddressBook oldAddressBook = addressBookMapper.selectOne(wrapper);
+            if (null == oldAddressBook) {
+                AddressBook addressBook = new AddressBook();
+                BeanUtils.copyProperties(resources, addressBook);
+                addressBookMapper.insert(addressBook);
+            }
         }
         return true;
     }
@@ -104,8 +107,13 @@ public class AddressBookServiceImpl extends CommonServiceImpl<UserMapper, User> 
         wrapper.eq(User::getUsername, resources.getUsername());
         User user = userMapper.selectOne(wrapper);
         if(null == user){
+            user = new User();
+            BeanUtils.copyProperties(resources, user);
+            user.setIsAdmin(false);
+            user.setEnabled(true);
            int id = userMapper.insert(user);
-            resources.setId((long) id);
+            user = userMapper.selectOne(wrapper);
+            resources.setId(user.getId());
         }else {
             resources.setId(user.getId());
         }
