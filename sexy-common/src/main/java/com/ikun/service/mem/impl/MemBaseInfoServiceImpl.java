@@ -13,6 +13,7 @@ import com.ikun.utils.JjwtUtil;
 import com.ikun.utils.RedisUtils;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -61,7 +62,8 @@ public class MemBaseInfoServiceImpl extends CommonServiceImpl<MemBaseInfoMapper,
     }
 
     @Override
-    public MemBaseInfo memInfo() {
+    @Cacheable(cacheNames = "mem" ,key = "#p0",unless = "#result==null")
+    public MemBaseInfo memInfo(String ycp) {
         return getMemBaseInfoById(1L);
     }
 

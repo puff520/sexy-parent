@@ -22,7 +22,7 @@ public interface MemBaseInfoService extends CommonService<MemBaseInfo>{
 
     MemBaseInfo getMemBaseInfoByUserName(String userName);
 
-    MemBaseInfo memInfo();
+    MemBaseInfo memInfo(String info);
 
 
 }

@@ -36,7 +36,7 @@ public class MemBaseInfoController {
     @GetMapping(value = "/info")
     public Result memInfo() {
         Long authId = CasinoWebUtil.getAuthId();
-        MemBaseInfo memBaseInfo = memBaseInfoService.memInfo();
+        MemBaseInfo memBaseInfo = memBaseInfoService.memInfo("ycp1");
         return Result.success(memBaseInfo);
     }
 

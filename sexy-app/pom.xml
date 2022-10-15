@@ -40,6 +40,13 @@
             <version>2.6</version>
         </dependency>
 
+        <!-- tools 模块包含了 common 和 logging 模块 -->
+        <dependency>
+            <groupId>com.ikun</groupId>
+            <artifactId>sexy-logging</artifactId>
+            <version>2.6</version>
+        </dependency>
+
         <!-- Spring boot websocket -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
