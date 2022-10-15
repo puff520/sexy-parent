@@ -42,5 +42,32 @@ public class IpUtil {
         return ip;
     }
 
+    public static String getAddress(String ip) {
+        try {
+            DbConfig config = new DbConfig();
+
+            String dbPath = "";
+            String filename = "/ip2region.db";
+            Boolean isWindows = CommonUtil.isWindows();
+            if (isWindows) {
+                dbPath = IpUtil.class.getResource(filename).getPath();
+            } else {
+                dbPath = "/usr/java/config" + filename;
+            }
+
+            DbSearcher searcher = new DbSearcher(config, dbPath);
+            DataBlock block = searcher.btreeSearch(ip);
+            return block.getRegion();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static void main(String[] args) {
+        String ip = "13.230.72.205";
+        String address = StringUtils.getLocalCityInfo(ip);
+        System.out.println("IP:" + address);
+    }
 
 }

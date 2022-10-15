@@ -6,6 +6,7 @@ import com.ikun.service.dto.LoginDto;
 import com.ikun.result.Result;
 import com.ikun.service.mem.MemBaseInfoService;
 import com.ikun.utils.CasinoWebUtil;
+import com.ikun.utils.IpUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +16,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 @Api(tags = "会员中心")
 @RestController
@@ -34,8 +36,10 @@ public class MemBaseInfoController {
 
     @ApiOperation("会员信息")
     @GetMapping(value = "/info")
-    public Result memInfo() {
+    public Result memInfo(HttpServletRequest request) {
         Long authId = CasinoWebUtil.getAuthId();
+        String address = IpUtil.getAddress(IpUtil.getIp(request));
+        System.out.println(address);
         MemBaseInfo memBaseInfo = memBaseInfoService.memInfo("ycp1");
         return Result.success(memBaseInfo);
     }

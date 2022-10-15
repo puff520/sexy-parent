@@ -9,6 +9,7 @@ import com.ikun.service.mapper.MemBaseInfoMapper;
 import com.ikun.service.mem.MemBaseInfoService;
 import com.ikun.utils.CasinoWebUtil;
 import com.ikun.constant.Constants;
+import com.ikun.utils.IpUtil;
 import com.ikun.utils.JjwtUtil;
 import com.ikun.utils.RedisUtils;
 import lombok.AllArgsConstructor;
