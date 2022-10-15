@@ -1,5 +1,5 @@
 
-package com.ikun.modules.controller;
+package com.ikun.controller;
 
 import com.ikun.annotation.Log;
 import com.ikun.service.addressbook.AddressBookService;

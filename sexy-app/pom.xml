@@ -13,7 +13,7 @@
     <name>app模块</name>
 
     <properties>
-        <jjwt.version>0.11.1</jjwt.version>
+        <jjwt.version>0.9.1</jjwt.version>
         <!-- oshi监控需要指定jna版本, 问题详见 https://github.com/oshi/oshi/issues/1040 -->
         <oshi.version>5.8.0</oshi.version>
         <jna.version>5.8.0</jna.version>
@@ -36,7 +36,7 @@
         <!-- tools 模块包含了 common 和 logging 模块 -->
         <dependency>
             <groupId>com.ikun</groupId>
-            <artifactId>sexy-tools</artifactId>
+            <artifactId>sexy-common</artifactId>
             <version>2.6</version>
         </dependency>
 
@@ -45,23 +45,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
-
-        <!-- jwt -->
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-api</artifactId>
-            <version>${jjwt.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-impl</artifactId>
-            <version>${jjwt.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.jsonwebtoken</groupId>
-            <artifactId>jjwt-jackson</artifactId>
-            <version>${jjwt.version}</version>
-        </dependency>
 
         <!-- quartz -->
         <dependency>
@@ -80,7 +63,11 @@
 			<artifactId>jsch</artifactId>
 			<version>0.1.55</version>
 		</dependency>
-
+        <dependency>
+            <groupId>net.jodah</groupId>
+            <artifactId>expiringmap</artifactId>
+            <version>0.5.8</version>
+        </dependency>
         <!-- 获取系统信息 -->
         <dependency>
             <groupId>com.github.oshi</groupId>

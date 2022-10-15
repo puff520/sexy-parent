@@ -1,5 +1,5 @@
 
-package com.ikun.config.thread;
+package com.ikun.thread;
 
 import com.ikun.utils.SpringContextHolder;
 
